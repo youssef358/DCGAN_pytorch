@@ -1,0 +1,57 @@
+# General Hyperparameters
+hyperparameters:
+  num_epochs: 5
+  latent_dim: 100
+  batch_size: 64
+  lr: 0.0002
+  betas:
+    - 0.5
+    - 0.999
+
+  generator:
+    input_nc: 100
+    ngf: 64
+
+  discriminator:
+    input_nc: 3
+    ndf: 64
+
+# Dataset Configuration
+datasets:
+  MNIST:
+    data_path: "../data/"
+    mean: [ 0.5 ]
+    std: [ 0.5 ]
+    output_nc: 1
+
+  CIFAR10:
+    data_path: "../data/"
+    mean: [ 0.5, 0.5, 0.5 ]
+    std: [ 0.5, 0.5, 0.5 ]
+    output_nc: 3
+
+  CELEBA:
+    data_path: "../data/"
+    mean: [ 0.5, 0.5, 0.5 ]
+    std: [ 0.5, 0.5, 0.5 ]
+    output_nc: 3
+
+# Training Configurations for each Dataset
+training:
+  MNIST:
+    num_channels: 1
+    image_size: 64
+
+  CIFAR10:
+    num_channels: 3
+    image_size: 64
+
+  CELEBA:
+    num_channels: 3
+    image_size: 64
+
+# Training output directories for each dataset
+output_dirs:
+  MNIST: "../outputs/MNIST/fake/"
+  CIFAR10: "../outputs/CIFAR10/fake/"
+  CELEBA: "../outputs/CELEBA/fake/"
